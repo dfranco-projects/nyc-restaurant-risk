@@ -1,6 +1,6 @@
 # NYC Restaurant Inspection Risk Classification
 
-This project builds a multiclass classification model to predict health **risk categories** (Low, Moderate, High) for restaurants in New York City based on inspection and violation data. It also integrates **generative AI** to produce mock public health alerts.
+This project regards the development of a multiclass classification model to predict health **risk categories** (Low, Moderate, High) for restaurants in New York City based on inspection and violation data. It also integrates **generative AI** to produce mock public health alerts.
 
 ## 🔍 Problem Overview
 
@@ -8,18 +8,43 @@ The NYC Health Department inspects restaurants regularly and assigns them a risk
 
 ## 📂 Project Structure
 
+```bash
+nyc-restaurant-risk/
+│
+├── data/                   # raw and processed data
+│   ├── raw/                # raw dataset
+│   └── processed/          # cleaned + split datasets
+│
+├── notebooks/              # jupyter workflows
+│   ├── 01_data_understanding.ipynb
+│   ├── 02_preprocessing_eda.ipynb
+│   ├── 03_feature_eng_modeling.ipynb
+│   ├── 04_evaluation_visualization.ipynb
+│   └── 05_genai_alerts.ipynb
+│
+├── src/                     # utility/reusable functions
+│   ├── data_utils.py
+│   ├── eda_utils.py
+│   ├── modeling.py
+│   └── genai.py
+│
+├── model/                  # final model and metrics
+├── plots/                  # Confusion matrix, maps, EDA figures
+├── slides/                 # Final presentation
+├── README.md               # project overview
+└── requirements.txt        # python dependencies
+```
 
 
 ## ⚙️ Tech Stack
 
 - Python 3.10+
 - Jupyter Notebooks
-- Scikit-learn
+- Scikit-learn, XGBoost, LightGBM
 - Pandas, NumPy
-- XGBoost, LightGBM
 - Seaborn, Matplotlib, Plotly
 - GeoPandas (for maps)
-- OpenAI API (for bonus GenAI task)
+- OpenAI API (for GenAI task)
 
 ## 🚀 How to Run Locally
 
@@ -33,7 +58,7 @@ cd nyc-restaurant-risk
 2. **Create virtual environment**
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate        # On Windows: .venv\Scripts\activate
 ```
 
@@ -49,15 +74,16 @@ Open Jupyter or VS Code and start with:
 
 - `01_data_understanding.ipynb`
 - `02_preprocessing_eda.ipynb`
-- `03_feature_eng_modeling.ipynb`
-- `04_evaluation_visualization.ipynb`
-- `05_genai_alerts.ipynb` (optional bonus)
+- `03_feature_engineering.ipynb`
+- `04_modeling.ipynb`
+- `05_evaluation_visualization.ipynb`
+- `06_genai_alerts.ipynb`
 
 Each notebook builds on the previous step and produces artifacts (e.g., processed data, model outputs).
 
 ## 🧠 Bonus: Generative AI Alerts
 
-In , we use OpenAI's GPT to generate automated public health alerts based on borough-level trends in high-risk violations.
+In `06_genai_alerts.ipynb`, we use OpenAI's GPT to generate automated public health alerts based on borough-level trends in high-risk violations.
 
 ---
 
