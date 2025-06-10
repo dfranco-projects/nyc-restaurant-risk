@@ -1,10 +1,10 @@
 # NYC Restaurant Inspection Risk Classification
 
-This project regards the development of a multiclass classification model to predict health **risk categories** (Low, Moderate, High) for restaurants in New York City based on inspection and violation data. It also integrates **generative AI** to produce mock public health alerts.
+This project regards a case study to develop a classification model to predict health and hygiene **Criticality** (Critical/Not Critical) for restaurants in New York City based on inspection and violation open-sourced data. It also integrates **generative AI** to produce mock public health alerts.
 
 ## 🔍 Problem Overview
 
-The NYC Health Department inspects restaurants regularly and assigns them a risk category based on observed violations. Early identification of high-risk establishments can help prioritize enforcement and protect public health.
+The NYC Health Department inspects restaurants regularly and assigns them a critical flag based on observed violations. Early identification of high-risk establishments can help prioritize enforcement and protect public health.
 
 ## 📂 Project Structure
 
@@ -39,12 +39,10 @@ nyc-restaurant-risk/
 ## ⚙️ Tech Stack
 
 - Python 3.10+
-- Jupyter Notebooks
-- Scikit-learn, XGBoost, LightGBM
-- Pandas, NumPy
-- Seaborn, Matplotlib, Plotly
-- GeoPandas (for maps)
-- OpenAI API (for GenAI task)
+- Jupyter Notebooks & Python Scripts
+- Pandas, NumPy, nltk
+- Scikit-learn, Optuna, Hugging Face
+- Seaborn, Matplotlib
 
 ## 🚀 How to Run Locally
 
@@ -73,25 +71,9 @@ pip install -r requirements.txt
 Open Jupyter or VS Code and start with:
 
 - `01_data_understanding.ipynb`
-- `02_preprocessing_eda.ipynb`
+- `02_eda.ipynb`
 - `03_feature_engineering.ipynb`
 - `04_modeling.ipynb`
-- `05_evaluation_visualization.ipynb`
-- `06_genai_alerts.ipynb`
+- `05_insights_gen_ai.ipynb`
 
 Each notebook builds on the previous step and produces artifacts (e.g., processed data, model outputs).
-
-## 🧠 Bonus: Generative AI Alerts
-
-In `06_genai_alerts.ipynb`, we use OpenAI's GPT to generate automated public health alerts based on borough-level trends in high-risk violations.
-
----
-
-## 📈 Deliverables
-
-- Clean, well-commented notebooks
-- Model performance metrics (accuracy, macro-F1)
-- Visualizations (EDA, confusion matrix, borough heatmaps)
-- Presentation slide deck (5–7 slides)
-- README with full reproducibility instructions
-
